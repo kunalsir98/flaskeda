@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDA Report for {{ dataset_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="report-wrapper">
+        <!-- Header Section -->
+        <header class="report-header">
+            <h1><i class="fas fa-database"></i> Dataset Overview: {{ dataset_name }}</h1>
+        </header>
+
+        <!-- Dataset Sample Section -->
+        <section class="report-section">
+            <h2><i class="fas fa-table"></i> Dataset Sample:</h2>
+            <div class="data-table">
+                {{ df_sample|safe }}
+            </div>
+        </section>
+
+        <!-- Dataset Statistics Section -->
+        <section class="report-section">
+            <h2><i class="fas fa-chart-bar"></i> Dataset Statistics:</h2>
+            <ul class="stats-list">
+                <li><strong>Shape:</strong> {{ data_info['Shape'] }}</li>
+                <li><strong>Columns:</strong> {{ data_info['Columns'] }}</li>
+                <li><strong>Data Types:</strong> {{ data_info['Data Types'] }}</li>
+                <li><strong>Missing Values:</strong> {{ data_info['Missing Values'] }}</li>
+                <li><strong>Summary Stats:</strong> {{ data_info['Summary Stats'] }}</li>
+            </ul>
+        </section>
+
+        <!-- Generate EDA Report Section -->
+        <section class="report-section">
+            <h2><i class="fas fa-file-alt"></i> Generate EDA Report:</h2>
+            <form method="POST" class="report-form">
+                <label for="eda_choice"><i class="fas fa-chart-pie"></i> Choose EDA Report Type:</label>
+                <select name="eda_choice" id="eda_choice" class="dropdown">
+                    <option value="ydata">YData Profiling</option>
+                    <option value="sweetviz">Sweetviz</option>
+                </select>
+                <button type="submit" class="generate-btn"><i class="fas fa-file-export"></i> Generate Report</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #004aad, #8e2de2); /* Gradient */
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+header:hover {
+    transform: translateY(-5px); /* Hover animation */
+}
+
+header h1 {
+    font-size: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Section Styles */
+section {
+    margin-top: 40px;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+section p, section ul {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+section ul {
+    list-style: none;
+}
+
+section li {
+    margin: 12px 0;
+}
+
+section li strong {
+    color: #66ffcc; /* Light Green */
+}
+
+/* Data Table Styles */
+.data-table {
+    margin-top: 30px;
+    overflow-x: auto;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+    color: #fff;
+}
+
+.data-table th {
+    background: linear-gradient(135deg, #8e2de2, #004aad);
+    color: white;
+}
+
+.data-table tr:hover {
+    background-color: #444;
+    transform: scale(1.02); /* Hover animation */
+    transition: transform 0.2s ease-in-out;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #222;
+}
+
+.data-table tr:nth-child(odd) {
+    background-color: #2a2a2a;
+}
+
+/* Form Styles */
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-size: 1.2rem;
+    color: #66ffcc;
+}
+
+form input, form select {
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #222;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    background-color: #444;
+    border-color: #66ffcc;
+}
+
+form button {
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #004aad, #8e2de2);
+    color: white;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(135deg, #8e2de2, #004aad);
+    transform: scale(1.05); /* Hover animation */
+}
+
+form button:active {
+    transform: scale(1.1);
+}
+
+form .generate-btn {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px 18px;
+    text-align: center;
+    display: inline-block;
+}
+
+form .generate-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+form .generate-btn:active {
+    transform: scale(1.1);
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 12px;
+    background: #004aad;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+footer a {
+    color: #66ffcc;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Back Link */
+.back-link {
+    color: #66ffcc;
+    font-size: 1.3rem;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #a9c1e9;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    form label {
+        font-size: 1rem;
+    }
+
+    form input, form select, form button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .data-table table {
+        font-size: 0.9rem;
+    }
+
+    .back-link {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation Effects */
+@keyframes shine {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+button, .generate-btn {
+    background: linear-gradient(135deg, #004aad, #8e2de2);
+    background-size: 400% 400%;
+    animation: shine 5s ease infinite;
+}
+
+button:hover, .generate-btn:hover {
+    animation: none;
+    background: linear-gradient(135deg, #004aad, #8e2de2);
+}
+.insights-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border-radius: 8px;
+}
+
+.insights-table th,
+.insights-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.insights-table th {
+    background-color: #34495e;
+    font-size: 1.1em;
+}
+
+.insights-table tr:nth-child(even) {
+    background-color: #34495e;
+}
+
+.insights-table tr:nth-child(odd) {
+    background-color: #2c3e50;
+}
+
+.sub-list {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.insights-list {
+    list-style-type: none;
+    padding: 0;
+}
+

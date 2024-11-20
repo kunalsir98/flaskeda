@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated EDA with Kunal</title>
+    <!-- Link to CSS dynamically using Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For icons -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <!-- Replace this with your EDA Logo -->
+            <h1 class="logo"><i class="fas fa-chart-line"></i> Automated EDA with Kunal</h1>
+            <nav class="navbar">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="card upload-card">
+                <h2 class="card-title">Upload Your CSV Dataset</h2>
+                <p class="card-description">To start the data processing, please upload a CSV file containing your dataset.</p>
+                <form method="POST" enctype="multipart/form-data" class="upload-form">
+                    <div class="form-group">
+                        <label for="dataset" class="form-label">Select Dataset (CSV):</label>
+                        <input type="file" name="dataset" id="dataset" accept=".csv" required class="file-input">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="flash-messages">
+                            <ul>
+                                {% for category, message in messages %}
+                                    <li class="{{ category }}">{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 | Made with <i class="fas fa-heart"></i> by Kunal</p>
+        </div>
+    </footer>
+
+</body>
+</html>
